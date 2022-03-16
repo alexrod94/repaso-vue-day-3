@@ -1,19 +1,16 @@
 <template>
   <div>
-    <button
-      v-for="element in groceries"
-      :key="element.id"
-      @click="showName(element)"
-    >
-      {{ element.name }}
-    </button>
-    <div class="card" :style="{ background: bcgColor }">Esta es mi card</div>
+    <router-link to="/code">Go to code</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
 export default {
+  components: {
+    Navbar,
+  },
   data() {
     return {
       eliodoro: false,
@@ -32,11 +29,4 @@ export default {
 };
 </script>
 
-<style>
-.card {
-  border: 1px solid black;
-  padding: 15px;
-  border-radius: 5px;
-  color: white;
-}
-</style>
+<style></style>
